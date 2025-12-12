@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Союзное государство | Россия и Беларусь</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+                url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка с улучшенным меню */
+        header {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 247, 250, 0.98));
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid #d62828;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+            min-width: 300px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #d62828;
+            transition: transform 0.3s;
+        }
+
+        .logo-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-text h1 {
+            color: #003366;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+        }
+
+        .logo-text p {
+            color: #0066cc;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .flags {
+            display: flex;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .flag {
+            width: 70px;
+            height: 45px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        .flag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .flag.ru {
+            background-image: url('https://flagcdn.com/w320/ru.png');
+        }
+
+        .flag.by {
+            background-image: url('https://flagcdn.com/w320/by.png');
+        }
+
+        /* Основное навигационное меню */
+        .main-nav {
+            width: 100%;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .nav-container {
+            width: 100%;
+            position: relative;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(135deg, #003366, #004080);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.25);
+            width: 100%;
+            position: relative;
+        }
+
+        .nav-item {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+            text-align: center;
+        }
+
+        .nav-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 18px 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-item:last-child .nav-link {
+            border-right: none;
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #d62828, #ff4d4d);
+            color: white;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #0066cc, #0088ff);
+            color: white;
+            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-link i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            min-width: 24px;
+            display: inline-block;
+        }
+
+        /* Выпадающее меню для Звезд */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2a2a4a 0%, #1a1a3a 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-radius: 0 0 10px 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 3px solid #d62828;
+            min-width: 100%;
+        }
+
+        .nav-item:has(.nav-link[data-page="stars"]):hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 15px 20px;
+            color: #e0e0ff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .dropdown-menu a:hover {
+            background: linear-gradient(90deg, #3742fa, #5352ed);
+            color: white;
+            padding-left: 25px;
+        }
+
+        .dropdown-menu a i {
+            width: 20px;
+            margin-right: 10px;
+            color: #ffa502;
+            text-align: center;
+        }
+
+        /* Основное содержимое */
+        .content-area {
+            min-height: 70vh;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Блоки героя - ПРАВИЛЬНОЕ ЦЕНТРИРОВАНИЕ */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
+            max-width: 1000px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Новый блок для заголовка Союзного государства */
+        .union-title-block {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin: 1.5rem auto;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 68, 128, 0.9));
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.25);
+            width: 100%;
+            max-width: 1000px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #d62828;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .union-title-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #d62828, #ff4d4d, #d62828);
+            animation: gradientMove 3s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .union-title-block h2 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .union-title-block p {
+            font-size: 1.4rem;
+            color: #ffcc00;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        /* Главная страница - отдельный стиль для hero */
+        #home .hero {
+            max-width: 1000px;
+        }
+
+        /* Остальные страницы - центрирование через контейнер */
+        .page:not(#home) > .hero {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: #d62828;
+            font-weight: bold;
+        }
+
+        /* Секция форм */
+        .auth-section {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 2rem 0 5rem;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .auth-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 450px;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .auth-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .auth-title {
+            color: #003366;
+            margin-bottom: 1.8rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-title i {
+            color: #d62828;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #0066cc;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0066cc;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #d62828, #ff4d4d);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #c1121f, #d62828);
+            box-shadow: 0 5px 20px rgba(214, 40, 40, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .auth-links {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .auth-links a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .auth-links a:hover {
+            color: #d62828;
+            text-decoration: underline;
+        }
+
+        /* Блок с пояснением */
+        /* Блок с пояснением - ПРОСТОЙ И СТИЛЬНЫЙ */
+.explanation-block {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.explanation-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #003366, #d62828);
+}
+
+.explanation-content h3 {
+    color: #003366;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.8rem;
+}
+
+.explanation-content h3 i {
+    color: #d62828;
+}
+
+.explanation-content p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.privacy-notice {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.8rem;
+    border-left: 5px solid #d62828;
+    font-size: 1rem;
+    color: #444;
+    margin-top: 1.5rem;
+}
+
+.privacy-notice i {
+    color: #d62828;
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.privacy-notice strong {
+    color: #003366;
+}
+
+        /* Контейнер опросника */
+        .user-survey-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem auto 5rem;
+        }
+
+        .user-survey-box {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-survey-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #003366, #d62828, #003366);
+        }
+
+        .user-survey-title {
+            color: #003366;
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-survey-title i {
+            color: #d62828;
+        }
+
+        .user-survey-subtitle {
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        /* Секции опросника */
+        .survey-section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e8eef5;
+        }
+
+        .section-title {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 51, 102, 0.1);
+        }
+
+        .section-title i {
+            color: #d62828;
+        }
+
+        /* Расположение полей в ряд */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-half {
+            flex: 1;
+        }
+
+        .form-hint {
+            display: block;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .required {
+            color: #d62828;
+            font-weight: bold;
+        }
+
+        /* Чекбоксы интересов */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .interest-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .interest-checkbox:hover {
+            border-color: #0066cc;
+            background: rgba(0, 102, 204, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .interest-checkbox input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            position: relative;
+            height: 20px;
+            width: 20px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            border: 2px solid #ccc;
+            transition: all 0.3s;
+        }
+
+        .interest-checkbox input:checked ~ .checkmark {
+            background-color: #003366;
+            border-color: #003366;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .interest-checkbox input:checked ~ .checkmark:after {
+            display: block;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .interest-checkbox i {
+            color: #0066cc;
+            font-size: 1.1rem;
+            min-width: 20px;
+        }
+
+        /* Кнопки */
+        .survey-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .survey-submit-btn {
+            flex: 2;
+            background: linear-gradient(135deg, #003366, #004080);
+            color: white;
+            padding: 18px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .survey-submit-btn:hover {
+            background: linear-gradient(135deg, #002244, #003366);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
+        }
+
+        .survey-clear-btn {
+            flex: 1;
+            background: linear-gradient(135deg, #666, #888);
+            color: white;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .survey-clear-btn:hover {
+            background: linear-gradient(135deg, #555, #777);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Футер опросника */
+        .survey-footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .survey-footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .survey-footer i {
+            color: #0066cc;
+            margin-right: 5px;
+        }
+
+        /* Карточки для страниц - ПРАВИЛЬНОЕ ЦЕНТРИРОВАНИЕ */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 2rem auto;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #d62828;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Подвал */
+        footer {
+            background: linear-gradient(135deg, #003366, #004080);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+            border-top: 5px solid #d62828;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: #d62828;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #e0e0ff;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffcc00;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0a0ff;
+            font-size: 0.9rem;
+        }
+
+        /* Стили для уведомления */
+        .survey-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #003366, #004080);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 400px;
+            z-index: 9999;
+            transform: translateX(500px);
+            transition: transform 0.5s ease;
+        }
+
+        .survey-notification.show {
+            transform: translateX(0);
+        }
+
+        .survey-notification i {
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+
+        .survey-notification strong {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .survey-notification p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .logo {
+                min-width: 250px;
+            }
+            
+            .nav-link {
+                padding: 18px 12px;
+                font-size: 1rem;
+            }
+            
+            .nav-link i {
+                margin-right: 8px;
+                font-size: 1.1rem;
+            }
+            
+            .cards-grid {
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .header-top {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo {
+                min-width: auto;
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+            }
+            
+            .nav-item {
+                flex: 1 1 calc(50% - 10px);
+                margin: 5px;
+                border-right: none !important;
+            }
+            
+            .nav-link {
+                border-radius: 8px;
+                border-right: none;
+                padding: 15px 10px;
+            }
+            
+            .union-title-block h2 {
+                font-size: 2.3rem;
+            }
+            
+            .union-title-block p {
+                font-size: 1.2rem;
+            }
+            
+            .user-survey-box {
+                padding: 2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .interests-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #2a2a4a;
+                border-radius: 8px;
+                margin-top: 5px;
+                display: none;
+                width: 100%;
+            }
+            
+            .nav-item:has(.nav-link[data-page="stars"]):hover .dropdown-menu,
+            .nav-item:has(.nav-link[data-page="stars"]).active .dropdown-menu {
+                display: block;
+            }
+            
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                max-width: 900px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .union-title-block {
+                padding: 2rem 1.5rem;
+                margin: 1rem auto;
+            }
+            
+            .union-title-block h2 {
+                font-size: 2rem;
+            }
+            
+            .union-title-block p {
+                font-size: 1.1rem;
+            }
+            
+            .auth-section {
+                gap: 25px;
+            }
+            
+            .auth-box {
+                padding: 2rem;
+            }
+            
+            .user-survey-box {
+                padding: 1.5rem;
+            }
+            
+            .user-survey-title {
+                font-size: 1.8rem;
+            }
+            
+            .survey-section {
+                padding: 1rem;
+            }
+            
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .survey-buttons {
+                flex-direction: column;
+            }
+            
+            .survey-submit-btn, .survey-clear-btn {
+                width: 100%;
+            }
+            
+            .nav-item {
+                flex: 1 1 100%;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .explanation-block {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .flag {
+                width: 50px;
+                height: 35px;
+            }
+            
+            .nav-link {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-link i {
+                font-size: 1rem;
+                margin-right: 5px;
+            }
+            
+            .union-title-block {
+                padding: 1.5rem 1rem;
+            }
+            
+            .union-title-block h2 {
+                font-size: 1.7rem;
+            }
+            
+            .union-title-block p {
+                font-size: 1rem;
+            }
+            
+            .user-survey-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .explanation-block {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-top">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Союзное государство</h1>
+                            <p>Россия и Беларусь: вместе навсегда</p>
+                        </div>
+                    </div>
+                    <div class="flags">
+                        <div class="flag ru" title="Флаг России"></div>
+                        <div class="flag by" title="Флаг Беларуси"></div>
+                    </div>
+                </div>
+                
+                <!-- Навигационное меню -->
+                <nav class="main-nav">
+                    <div class="nav-container">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active" data-page="home">
+                                    <i class="fas fa-home"></i>Главная
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-page="forums">
+                                    <i class="fas fa-comments"></i>Форумы
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-page="science">
+                                    <i class="fas fa-flask"></i>Научная деятельность
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-page="internships">
+                                    <i class="fas fa-graduation-cap"></i>Стажировки
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-page="vacancies">
+                                    <i class="fas fa-briefcase"></i>Вакансии
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-page="grants">
+                                    <i class="fas fa-award"></i>Гранты
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-page="stars">
+                                    <i class="fas fa-star"></i>Звёзды
+                                </a>
+                                <!-- Выпадающее меню ТОЛЬКО для пункта Звезды -->
+                                <div class="dropdown-menu">
+                                    <a href="#" data-page="stars-info"><i class="fas fa-info-circle"></i>Информация</a>
+                                    <a href="#" data-page="stars-get"><i class="fas fa-trophy"></i>Как получить</a>
+                                    <a href="#" data-page="stars-loyalty"><i class="fas fa-heart"></i>Лояльности</a>
+                                    <a href="#" data-page="stars-leaders"><i class="fas fa-crown"></i>Лидеры</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="container">
+        <div class="content-area">
+            <!-- Главная страница -->
+            <div class="page active" id="home">
+                <section class="hero">
+                    <h2>Добро пожаловать на портал дружбы!</h2>
+                    <p>Этот проект посвящён <span class="highlight">вековой дружбе, братству и стратегическому партнёрству</span> между народами России и Беларуси. Здесь мы делимся историями, новостями и совместными достижениями наших стран.</p>
+                    <p>Присоединяйтесь к нашему сообществу, чтобы укреплять связи и создавать будущее вместе!</p>
+                </section>
+
+                <!-- Новый блок с заголовком Союзного государства -->
+                <div class="union-title-block">
+                    <h2>СОЮЗНОЕ ГОСУДАРСТВО</h2>
+                    <p>Россия и Беларусь: единое пространство для жизни, экономики и развития</p>
+                </div>
+
+                <!-- Секция регистрации и входа -->
+                <section class="auth-section">
+                    <div class="auth-box">
+                        <h2 class="auth-title"><i class="fas fa-user-plus"></i> Регистрация</h2>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="regName">Имя и фамилия</label>
+                                <input type="text" id="regName" class="form-control" placeholder="Введите ваше имя" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regEmail">Электронная почта</label>
+                                <input type="email" id="regEmail" class="form-control" placeholder="example@mail.ru" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regPassword">Пароль</label>
+                                <input type="password" id="regPassword" class="form-control" placeholder="Не менее 6 символов" required minlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label for="regCountry">Ваша страна</label>
+                                <select id="regCountry" class="form-control" required>
+                                    <option value="" disabled selected>Выберите страну</option>
+                                    <option value="ru">Россия</option>
+                                    <option value="by">Беларусь</option>
+                                    <option value="other">Другая</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn">Зарегистрироваться</button>
+                        </form>
+                        <p class="auth-links">Уже есть аккаунт? <a href="#" id="toLogin">Войти</a></p>
+                    </div>
+
+                    <div class="auth-box">
+                        <h2 class="auth-title"><i class="fas fa-sign-in-alt"></i> Вход</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Электронная почта</label>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="example@mail.ru" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Пароль</label>
+                                <input type="password" id="loginPassword" class="form-control" placeholder="Введите ваш пароль" required>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="rememberMe"> Запомнить меня
+                                </label>
+                            </div>
+                            <button type="submit" class="btn">Войти</button>
+                        </form>
+                        <p class="auth-links">Нет аккаунта? <a href="#" id="toRegister">Зарегистрироваться</a></p>
+                    </div>
+                </section>
+
+                <!-- Блок с пояснением -->
+                <div class="explanation-block">
+                    <div class="explanation-content">
+                        <h3><i class="fas fa-info-circle"></i> Ваша информация важна для нас</h3>
+                        <p>Указав некоторые данные о себе, вы поможете нам понять, для кого мы работаем и как сделать Союзное государство ближе именно таким людям, как вы.</p>
+                        <p class="privacy-notice">
+                            <i class="fas fa-shield-alt"></i> Заполняя эту форму, вы даете согласие Администрации сайта <strong>"Союзное государство"</strong> на обработку ваших персональных данных, предоставленных в ходе данного опроса (включая, но не ограничиваясь: имя, регион проживания, возрастную группу, контактный e-mail или телефон)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Опросник о пользователе -->
+                <div class="user-survey-container">
+                    <div class="user-survey-box">
+                        <h2 class="user-survey-title"><i class="fas fa-user-edit"></i> Расскажите о себе</h2>
+                        <p class="user-survey-subtitle">Помогите нам лучше понять наше сообщество</p>
+                        
+                        <form id="userSurveyForm">
+                            <!-- Личная информация -->
+                            <div class="survey-section">
+                                <h3 class="section-title"><i class="fas fa-id-card"></i> Личная информация</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group form-half">
+                                        <label for="userName">Как вас зовут (фамилия имя отчество полностью) <span class="required">*</span></label>
+                                        <input type="text" id="userName" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group form-half">
+                                        <label for="userAge">Сколько вам лет <span class="required">*</span></label>
+                                        <input type="number" id="userAge" class="form-control" min="16" max="100" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group form-half">
+                                        <label for="userCity">С какого вы города <span class="required">*</span></label>
+                                        <input type="text" id="userCity" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group form-half">
+                                        <label for="userRegion">Регион / Область <span class="required">*</span></label>
+                                        <input type="text" id="userRegion" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Контактная информация -->
+                            <div class="survey-section">
+                                <h3 class="section-title"><i class="fas fa-address-book"></i> Контактная информация</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group form-half">
+                                        <label for="userPhone">Номер телефона <span class="required">*</span></label>
+                                        <input type="tel" id="userPhone" class="form-control" required>
+                                        
+                                    </div>
+                                    
+                                    <div class="form-group form-half">
+                                        <label for="userEmail">Электронная почта <span class="required">*</span></label>
+                                        <input type="email" id="userEmail" class="form-control" placeholder="example@mail.ru" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Образование -->
+                            <div class="survey-section">
+                                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Образование</h3>
+                                
+                                <div class="form-group">
+                                    <label for="userEducation">Где вы обучаетесь (город, название университета полностью) <span class="required">*</span></label>
+                                    <input type="text" id="userEducation" class="form-control" placeholder="Москва, Московский государственный университет имени М.В. Ломоносова" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="userFaculty">Факультет / специальность</label>
+                                    <input type="text" id="userFaculty" class="form-control" placeholder="Механико-математический факультет, Прикладная математика">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="userCourse">Курс / год обучения</label>
+                                    <select id="userCourse" class="form-control">
+                                        <option value="">Выберите курс</option>
+                                        <option value="1">1 курс</option>
+                                        <option value="2">2 курс</option>
+                                        <option value="3">3 курс</option>
+                                        <option value="4">4 курс</option>
+                                        <option value="5">5 курс</option>
+                                        <option value="6">6 курс</option>
+                                        <option value="master">Магистратура</option>
+                                        <option value="aspirant">Аспирантура</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Научные достижения -->
+                            <div class="survey-section">
+                                <h3 class="section-title"><i class="fas fa-flask"></i> Научная деятельность</h3>
+                                
+                                <div class="form-group">
+                                    <label for="userAchievements">Научные достижения, публикации, проекты</label>
+                                    <textarea id="userAchievements" class="form-control survey-textarea" placeholder="Опишите ваши научные достижения, публикации, участие в проектах..." rows="4"></textarea>
+                                    <small class="form-hint">Например: публикации в научных журналах, участие в конференциях, научные проекты</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="userCompetitions">Участие в международных конкурсах (указать какие, какой год)</label>
+                                    <textarea id="userCompetitions" class="form-control survey-textarea" placeholder="Название конкурса, год участия, достигнутые результаты..." rows="4"></textarea>
+                                    <small class="form-hint">Например: Международная олимпиада по математике 2025, 2 место</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Интересы -->
+                            <div class="survey-section">
+                                <h3 class="section-title"><i class="fas fa-heart"></i> Интересы и предпочтения</h3>
+                                
+                                <div class="form-group">
+                                    <label for="userInterests">Какие мероприятия вам интересны? <span class="required">*</span></label>
+                                    <div class="interests-grid">
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="forums">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-comments"></i> Научные форумы и конференции
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="internships">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-graduation-cap"></i> Стажировки и практики
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="grants">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-award"></i> Гранты и конкурсы
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="youth">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-users"></i> Молодёжные программы
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="business">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-briefcase"></i> Бизнес-форумы
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="culture">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-paint-brush"></i> Культурные мероприятия
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="volunteer">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-hands-helping"></i> Волонтёрские проекты
+                                        </label>
+                                        <label class="interest-checkbox">
+                                            <input type="checkbox" name="interests" value="sports">
+                                            <span class="checkmark"></span>
+                                            <i class="fas fa-running"></i> Спортивные события
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="userAdditional">Дополнительные пожелания и комментарии</label>
+                                    <textarea id="userAdditional" class="form-control survey-textarea" placeholder="Что бы вы хотели видеть на нашем портале? Какие темы вас особенно интересуют?" rows="4"></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Кнопки -->
+                            <div class="survey-buttons">
+                                <button type="submit" class="btn survey-submit-btn">
+                                    <i class="fas fa-check-circle"></i> Отправить анкету
+                                </button>
+                                <button type="button" class="btn survey-clear-btn" id="clearUserSurvey">
+                                    <i class="fas fa-redo"></i> Очистить форму
+                                </button>
+                            </div>
+                            
+                            <div class="survey-footer">
+                                <p><i class="fas fa-lock"></i> Ваши данные защищены и используются только для улучшения работы портала</p>
+                                <p><span class="required">*</span> - обязательные для заполнения поля</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Форумы -->
+            <div class="page" id="forums">
+                <section class="hero">
+                    <h2><i class="fas fa-comments"></i> Форумы сотрудничества</h2>
+                    <p>Площадки для обмена опытом, обсуждения совместных проектов и укрепления партнёрских отношений между Россией и Беларусью.</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Образовательные форумы</h3>
+                        <p>Ежегодные встречи ректоров вузов, обмен образовательными программами, совместные научные конференции. Участвуют ведущие университеты обеих стран.</p>
+                        <p class="news-date">Следующий форум: 15-17 декабря 2025</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Бизнес-форумы</h3>
+                        <p>Площадки для деловых контактов, инвестиционных проектов и совместных предприятий. За последний год заключено соглашений на сумму более 5 млрд рублей.</p>
+                        <p class="news-date">Следующий форум: 20-22 декабря 2025</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Молодёжные форумы</h3>
+                        <p>Программы обмена, стартап-конкурсы, волонтёрские проекты для молодёжи обеих стран. Ежегодно участвуют более 10 000 молодых людей.</p>
+                        <p class="news-date">Следующий форум: 10-12 января 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Научная деятельность -->
+            <div class="page" id="science">
+                <section class="hero">
+                    <h2><i class="fas fa-flask"></i> Научное сотрудничество</h2>
+                    <p>Совместные исследования, инновационные разработки и технологический обмен между научными центрами России и Беларуси.</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Совместные исследования</h3>
+                        <p>Более 50 научных проектов в области медицины, энергетики и новых материалов. Создано 10 совместных лабораторий в ведущих научных центрах.</p>
+                        <p>Ключевые направления: биотехнологии, наноматериалы, ядерная энергетика.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h3>Космические программы</h3>
+                        <p>Совместное использование спутниковых систем, разработка космических аппаратов, подготовка космонавтов. Проекты: "Союз-Беларусь", "Канопус-В".</p>
+                        <p>Ежегодные инвестиции: более 2 млрд рублей.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>IT-разработки</h3>
+                        <p>Создание совместного IT-кластера, разработка программного обеспечения, кибербезопасность. Участвуют Яндекс, VK, Wargaming, EPAM.</p>
+                        <p>Создано единое цифровое пространство для взаимодействия.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Стажировки -->
+            <div class="page" id="internships">
+                <section class="hero">
+                    <h2><i class="fas fa-graduation-cap"></i> Программы стажировок</h2>
+                    <p>Возможности для профессионального роста и обмена опытом в различных отраслях экономики России и Беларуси.</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Государственные учреждения</h3>
+                        <p>Стажировки в министерствах, ведомствах и администрациях регионов. Срок: 3-6 месяцев. Включено проживание и стипендия.</p>
+                        <p>Требования: высшее образование, возраст до 35 лет, знание языков.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Промышленные предприятия</h3>
+                        <p>Практика на ведущих заводах и фабриках обеих стран. Партнеры: БелАЗ, КАМАЗ, МАЗ, Газпром.</p>
+                        <p>Возможность последующего трудоустройства в компаниях-партнерах.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-computer"></i>
+                        </div>
+                        <h3>IT-компании</h3>
+                        <p>Стажировки в технологических компаниях с возможностью последующего трудоустройства. Участвуют ведущие IT-компании обеих стран.</p>
+                        <p>Программы: от 3 до 12 месяцев с наставничеством.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Вакансии -->
+            <div class="page" id="vacancies">
+                <section class="hero">
+                    <h2><i class="fas fa-briefcase"></i> Карьерные возможности</h2>
+                    <p>Работа в совместных проектах и предприятиях России и Беларуси. Актуальные вакансии во всех сферах экономики.</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Государственная служба</h3>
+                        <p>Вакансии в представительствах, дипломатических миссиях и совместных комиссиях. Текущие вакансии: 25 позиций.</p>
+                        <p>Заработная плата: от 80 000 рублей, социальный пакет.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>IT-сфера</h3>
+                        <p>Разработчики, аналитики, специалисты по кибербезопасности в совместных IT-проектах. Текущие вакансии: 150+ позиций.</p>
+                        <p>Заработная плата: от 120 000 рублей, удалённая работа возможна.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3>Медицина</h3>
+                        <p>Врачи, исследователи, специалисты в совместных медицинских центрах. Текущие вакансии: 40 позиций.</p>
+                        <p>Заработная плата: от 70 000 рублей, возможность стажировок за рубежом.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Гранты -->
+            <div class="page" id="grants">
+                <section class="hero">
+                    <h2><i class="fas fa-award"></i> Программы финансирования</h2>
+                    <p>Грантовая поддержка совместных проектов, исследований и культурных инициатив России и Беларуси.</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Научные гранты</h3>
+                        <p>Финансирование совместных исследований до 5 млн рублей. Срок реализации: 1-3 года. Срок подачи: до 31 декабря 2025.</p>
+                        <p>Приоритетные направления: инновационные технологии, медицина, экология.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Культурные гранты</h3>
+                        <p>Поддержка художественных проектов, выставок, фестивалей. Размер гранта: до 2 млн рублей. Срок подачи: до 15 января 2024.</p>
+                        <p>Направления: музыка, театр, изобразительное искусство, литература.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Стартап-финансирование</h3>
+                        <p>Инвестиции в инновационные проекты с потенциалом масштабирования на рынки обеих стран. Срок подачи: круглый год.</p>
+                        <p>Объём инвестиций: от 500 тыс. до 10 млн рублей.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Звёзды -->
+            <div class="page" id="stars">
+                <section class="hero">
+                    <h2><i class="fas fa-star"></i> Система звёзд лояльности</h2>
+                    <p>Зарабатывайте звёзды за активность и получайте привилегии в сообществе России и Беларуси!</p>
+                </section>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Информация о системе</h3>
+                        <p>Звёзды — это система поощрения активных участников сообщества России и Беларуси. Вы получаете звёзды за различные виды деятельности.</p>
+                        <p><strong>Что можно получить за звёзды:</strong> привилегии, доступ к эксклюзивным мероприятиям, подарки.</p>
+                        <a href="#" data-page="stars-info" style="color: #0066cc; font-weight: 600; display: inline-block; margin-top: 10px;">Подробнее об информации →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Как получить звёзды</h3>
+                        <p>Узнайте, как зарабатывать звёзды за различные виды деятельности на портале. От регистрации до организации мероприятий.</p>
+                        <p><strong>Примеры:</strong> регистрация (+5), участие в форумах (+10), публикация статей (+15).</p>
+                        <a href="#" data-page="stars-get" style="color: #0066cc; font-weight: 600; display: inline-block; margin-top: 10px;">Узнать подробности →</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Программа лояльности</h3>
+                        <p>Уникальная система поощрения за постоянное участие в проектах сотрудничества России и Беларуси.</p>
+                        <p><strong>Уровни:</strong> Базовый, Премиум, VIP с разными привилегиями.</p>
+                        <a href="#" data-page="stars-loyalty" style="color: #0066cc; font-weight: 600; display: inline-block; margin-top: 10px;">Изучить программу →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Новости -->
+            <div class="page" id="news">
+                <section class="hero">
+                    <h2><i class="fas fa-newspaper"></i> Новости сотрудничества</h2>
+                    <p>Самые свежие новости о совместных проектах России и Беларуси</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Подписано соглашение о научно-техническом сотрудничестве</h3>
+                        <span class="news-date">20 ноября 2023</span>
+                        <p>Россия и Беларусь подписали новое соглашение о создании единого научно-технологического пространства, которое позволит объединить усилия исследовательских институтов двух стран.</p>
+                        <p><strong>Ключевые направления:</strong> биотехнологии, искусственный интеллект, космические исследования, энергетика будущего.</p>
+                        <p><strong>Ожидаемый эффект:</strong> ускорение внедрения инноваций в промышленность на 30%.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Форум молодых учёных прошёл в Минске</h3>
+                        <span class="news-date">15 ноября 2023</span>
+                        <p>В Национальной библиотеке Беларуси состоялся ежегодный форум с участием 300 молодых исследователей из России и Беларуси. Обсуждались перспективы совместных проектов в области высоких технологий.</p>
+                        <p><strong>Участники:</strong> 150 российских и 150 белорусских учёных в возрасте до 35 лет.</p>
+                        <p><strong>Результат:</strong> инициировано 25 новых совместных исследовательских проектов.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Запущен совместный IT-проект</h3>
+                        <span class="news-date">10 ноября 2023</span>
+                        <p>Российские и белорусские IT-компании запустили совместную платформу для цифрового взаимодействия между предприятиями двух стран. Платформа уже объединила более 500 компаний.</p>
+                        <p><strong>Планируемый эффект:</strong> увеличение товарооборота в IT-секторе на 15% в 2024 году.</p>
+                        <p><strong>Технологии:</strong> блокчейн, искусственный интеллект, большие данные.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Истории дружбы -->
+            <div class="page" id="stories">
+                <section class="hero">
+                    <h2><i class="fas fa-book-open"></i> Истории дружбы</h2>
+                    <p>Реальные истории сотрудничества и дружбы между людьми России и Беларуси</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>От партнёров к друзьям: история совместного бизнеса</h3>
+                        <p><strong>Автор:</strong> Иван Петров, предприниматель из Москвы</p>
+                        <p>"Всё началось с деловой встречи на российско-белорусском форуме в 2018 году. Мы с Александром из Минска обсуждали возможности сотрудничества. Сначала это были просто деловые отношения, но со временем мы поняли, что у нас много общего не только в бизнесе, но и в жизненных ценностях..."</p>
+                        <p>Сегодня их совместное предприятие выпускает оборудование для сельского хозяйства, которое поставляется в обе страны и экспортируется в третьи страны.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Научный прорыв: как мы создали инновационный материал</h3>
+                        <p><strong>Автор:</strong> Анна Смирнова, учёный из Минска</p>
+                        <p>"Наша исследовательская группа из Беларуси несколько лет работала над созданием нового композитного материала. Когда к проекту присоединились коллеги из Московского университета, работа пошла в разы быстрее. Российские учёные привнесли новые методы анализа, а мы поделились своими наработками..."</p>
+                        <p>Совместно созданный материал теперь используется в медицинских имплантах и получил международное признание, выиграв премию на европейской выставке инноваций.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Молодёжный обмен: как студенты нашли общий язык</h3>
+                        <p><strong>Автор:</strong> Мария Ковалёва, студентка из Санкт-Петербурга</p>
+                        <p>"Я участвовала в программе обмена между СПбГУ и БГУ. Первый месяц было непросто - разные привычки, немного другой менталитет. Но белорусские ребята оказались очень дружелюбными и открытыми. Мы вместе готовили национальные блюда, отмечали праздники, ходили на экскурсии..."</p>
+                        <p>После окончания обмена Мария и её новые друзья продолжают общаться и даже планируют совместный стартап в сфере образовательных технологий.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница Контакты -->
+            <div class="page" id="contacts">
+                <section class="hero">
+                    <h2><i class="fas fa-address-book"></i> Контакты</h2>
+                    <p>Свяжитесь с нами для сотрудничества и получения информации</p>
+                </section>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Москва</h3>
+                        <p><i class="fas fa-building"></i> ул. Тверская, д. 10</p>
+                        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> moskva@union-state.ru</p>
+                        <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-18:00</p>
+                        <p><i class="fas fa-subway"></i> Метро: Тверская, Чеховская</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Минск</h3>
+                        <p><i class="fas fa-building"></i> пр. Независимости, д. 50</p>
+                        <p><i class="fas fa-phone"></i> +375 (17) 234-56-78</p>
+                        <p><i class="fas fa-envelope"></i> minsk@union-state.ru</p>
+                        <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-18:00</p>
+                        <p><i class="fas fa-subway"></i> Метро: Площадь Ленина</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Техническая поддержка</h3>
+                        <p><i class="fas fa-phone"></i> 8-800-123-45-67 (бесплатно по России)</p>
+                        <p><i class="fas fa-phone"></i> +375 (17) 800-12-34 (бесплатно по Беларуси)</p>
+                        <p><i class="fas fa-envelope"></i> support@union-state.ru</p>
+                        <p><i class="fas fa-clock"></i> Круглосуточно, без выходных</p>
+                        <p><i class="fas fa-comments"></i> Онлайн-чат на сайте: 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>Этот сайт создан для укрепления культурных и социальных связей между Россией и Беларусью.</p>
+                    <p>Мы объединяем людей, идеи и возможности для совместного развития и процветания наших народов.</p>
+                    <p><strong>Основан:</strong> 2025 год</p>
+                    <p><strong>Миссия:</strong> Создание единого пространства для сотрудничества</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <a href="#" data-page="news"><i class="fas fa-newspaper"></i> Новости сотрудничества</a>
+                    <a href="#" data-page="stories"><i class="fas fa-book-open"></i> Истории дружбы</a>
+                    <a href="#" data-page="contacts"><i class="fas fa-address-book"></i> Контакты</a>
+                    <a href="#" data-page="home"><i class="fas fa-home"></i> Главная страница</a>
+                    <a href="#" data-page="stars"><i class="fas fa-star"></i> Система звёзд</a>
+                    <a href="#" data-page="forums"><i class="fas fa-comments"></i> Форумы</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты и поддержка</h3>
+                    <p><i class="fas fa-envelope"></i> info@union-state.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67 (Москва)</p>
+                    <p><i class="fas fa-phone"></i> +375 (17) 234-56-78 (Минск)</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-18:00</p>
+                    <p><i class="fas fa-globe"></i> www.union-state.ru</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Портал "Союзное государство". Все права защищены.</p>
+                <p>Россия и Беларусь — одна семья, одна история, одно будущее. Вместе мы сила!</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">При использовании материалов сайта ссылка на источник обязательна.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Система навигации по страницам
+        document.addEventListener('DOMContentLoaded', function() {
+            // Элементы навигации
+            const navLinks = document.querySelectorAll('.nav-link, .dropdown-menu a, .footer-section a[data-page]');
+            const pages = document.querySelectorAll('.page');
+            
+            // Показ страницы
+            function showPage(pageId) {
+                // Скрыть все страницы
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Показать выбранную страницу
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    
+                    // Прокрутка вверх
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    // Обновление активной ссылки в меню
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-page') === pageId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            }
+            
+            // Обработчики кликов по ссылкам
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    if (pageId) {
+                        showPage(pageId);
+                    }
+                });
+            });
+            
+            // Обработка регистрации
+            const registerForm = document.getElementById('registerForm');
+            const loginForm = document.getElementById('loginForm');
+            const toLoginLink = document.getElementById('toLogin');
+            const toRegisterLink = document.getElementById('toRegister');
+            const authBoxes = document.querySelectorAll('.auth-box');
+            
+            registerForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const name = document.getElementById('regName').value;
+                const email = document.getElementById('regEmail').value;
+                const password = document.getElementById('regPassword').value;
+                const country = document.getElementById('regCountry').value;
+                
+                // Простая валидация
+                if (name.length < 2) {
+                    alert('Имя должно содержать не менее 2 символов');
+                    return;
+                }
+                
+                if (password.length < 6) {
+                    alert('Пароль должен содержать не менее 6 символов');
+                    return;
+                }
+                
+                if (!country) {
+                    alert('Пожалуйста, выберите страну');
+                    return;
+                }
+                
+                alert(`Спасибо за регистрацию, ${name}! Добро пожаловать в наше сообщество!`);
+                registerForm.reset();
+            });
+
+            // Обработка входа
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                if (!email || !password) {
+                    alert('Пожалуйста, заполните все поля');
+                    return;
+                }
+                
+                alert('Вход выполнен успешно! Добро пожаловать!');
+                loginForm.reset();
+            });
+
+            // Анимация переключения между формами
+            toLoginLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                authBoxes.forEach(box => {
+                    box.style.transform = 'translateX(-100%)';
+                    setTimeout(() => {
+                        box.style.order = box.style.order === '1' ? '0' : '1';
+                        box.style.transform = 'translateX(0)';
+                    }, 300);
+                });
+            });
+
+            toRegisterLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                authBoxes.forEach(box => {
+                    box.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        box.style.order = box.style.order === '1' ? '0' : '1';
+                        box.style.transform = 'translateX(0)';
+                    }, 300);
+                });
+            });
+            
+            // Обработка выбора страны
+            const countrySelect = document.getElementById('regCountry');
+            countrySelect.addEventListener('change', function() {
+                const selected = this.options[this.selectedIndex].text;
+                console.log(`Выбрана страна: ${selected}`);
+            });
+            
+            // Обработка опроса о пользователе
+            const userSurveyForm = document.getElementById('userSurveyForm');
+            const clearUserSurveyBtn = document.getElementById('clearUserSurvey');
+
+            if (userSurveyForm) {
+                userSurveyForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Собираем данные
+                    const userData = {
+                        name: document.getElementById('userName').value.trim(),
+                        age: document.getElementById('userAge').value.trim(),
+                        city: document.getElementById('userCity').value.trim(),
+                        region: document.getElementById('userRegion').value.trim(),
+                        phone: document.getElementById('userPhone').value.trim(),
+                        email: document.getElementById('userEmail').value.trim(),
+                        education: document.getElementById('userEducation').value.trim(),
+                        faculty: document.getElementById('userFaculty').value.trim(),
+                        course: document.getElementById('userCourse').value,
+                        achievements: document.getElementById('userAchievements').value.trim(),
+                        competitions: document.getElementById('userCompetitions').value.trim(),
+                        additional: document.getElementById('userAdditional').value.trim(),
+                        interests: []
+                    };
+                    
+                    // Собираем выбранные интересы
+                    const interestCheckboxes = document.querySelectorAll('input[name="interests"]:checked');
+                    interestCheckboxes.forEach(checkbox => {
+                        userData.interests.push(checkbox.value);
+                    });
+                    
+                    // Валидация обязательных полей
+                    if (!userData.name || !userData.age || !userData.city || !userData.region || !userData.phone || !userData.email || !userData.education) {
+                        alert('Пожалуйста, заполните все обязательные поля (отмечены звёздочкой *)');
+                        return;
+                    }
+                    
+                    if (userData.interests.length === 0) {
+                        alert('Пожалуйста, выберите хотя бы один интересующий вас тип мероприятий');
+                        return;
+                    }
+                    
+                    // Проверка email
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(userData.email)) {
+                        alert('Пожалуйста, введите корректный email адрес');
+                        return;
+                    }
+                    
+                    // Проверка телефона (упрощённая)
+                    if (userData.phone.length < 10) {
+                        alert('Пожалуйста, введите корректный номер телефона');
+                        return;
+                    }
+                    
+                    // Здесь можно отправить данные на сервер
+                    // Например: fetch('/api/user-survey', { method: 'POST', body: JSON.stringify(userData) })
+                    
+                    // Показываем уведомление
+                    const notification = document.createElement('div');
+                    notification.className = 'survey-notification';
+                    notification.innerHTML = `
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Спасибо за участие!</strong>
+                            <p>Ваша анкета успешно отправлена. Мы свяжемся с вами в ближайшее время.</p>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    // Анимация появления
+                    setTimeout(() => {
+                        notification.classList.add('show');
+                    }, 10);
+                    
+                    // Очистка формы через 3 секунды
+                    setTimeout(() => {
+                        userSurveyForm.reset();
+                        notification.classList.remove('show');
+                        setTimeout(() => {
+                            notification.remove();
+                        }, 300);
+                    }, 3000);
+                    
+                    // Анимация формы
+                    const surveyBox = document.querySelector('.user-survey-box');
+                    surveyBox.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        surveyBox.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            }
+
+            if (clearUserSurveyBtn) {
+                clearUserSurveyBtn.addEventListener('click', function() {
+                    if (confirm('Вы уверены, что хотите очистить всю анкету? Все введённые данные будут удалены.')) {
+                        userSurveyForm.reset();
+                        alert('Анкета очищена');
+                    }
+                });
+            }
+            
+            // Обработка мобильного меню для выпадающего списка
+            if (window.innerWidth <= 992) {
+                const starsLink = document.querySelector('.nav-link[data-page="stars"]');
+                const dropdownMenu = document.querySelector('.dropdown-menu');
+                
+                if (starsLink && dropdownMenu) {
+                    starsLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                    });
+                    
+                    // Закрытие меню при клике вне его
+                    document.addEventListener('click', function(e) {
+                        if (!e.target.closest('.nav-item:last-child')) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+                }
+            }
+            
+            // Функция для обновления макета при изменении размера окна
+            window.addEventListener('resize', function() {
+                const dropdownMenu = document.querySelector('.dropdown-menu');
+                if (window.innerWidth > 992 && dropdownMenu) {
+                    dropdownMenu.style.display = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
